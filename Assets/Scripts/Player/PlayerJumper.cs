@@ -5,17 +5,17 @@ using UnityEngine;
 public class PlayerJumper : MonoBehaviour
 {
     [SerializeField] private float _force;
+    [SerializeField] private float _groundDistance;
 
     private PlayerInput _playerInput;
     private Rigidbody _rigidbody;
-    private bool _inAir;
 
     private void Awake()
     {
         _playerInput = new PlayerInput();
         _rigidbody = GetComponent<Rigidbody>();
 
-        _playerInput.Player.Jump.performed += ctx => OnJump();
+        _playerInput.Player.Jump.performed += ctx => TryJump();
     }
 
     private void OnEnable()
@@ -28,19 +28,11 @@ public class PlayerJumper : MonoBehaviour
         _playerInput.Disable();
     }
 
-
-    private void OnJump()
+    private void TryJump()
     {
-        if (_inAir == false)
+        if (Physics.Raycast(transform.position, Vector3.down, _groundDistance))
         {
-            _inAir = true;
             _rigidbody.velocity = Vector2.up * _force;
         }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.TryGetComponent(out Floor floor))
-            _inAir = false;
     }
 }

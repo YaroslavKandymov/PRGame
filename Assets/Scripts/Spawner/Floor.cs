@@ -2,6 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Floor : SpawnObject
+public class Floor : MonoBehaviour
 {
 }

@@ -11,8 +11,6 @@ public class PlayerMover : MonoBehaviour
 
     private void Move()
     {
-        float scaledMoveSpeed = _speed * Time.deltaTime;
-        Vector3 move = Quaternion.Euler(0, transform.localEulerAngles.y, 0) * Vector3.right;
-        transform.position += move * scaledMoveSpeed;
+        transform.position += Vector3.right * _speed * Time.deltaTime;
     }
 }

@@ -352,6 +352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _force: 10
+  _groundDistance: 0.2
 --- !u!135 &898223946
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -835,7 +836,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1906965401}
-  - component: {fileID: 1906965400}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -843,25 +843,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1906965400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1906965399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9380e5d60d459504183ea0093e675964, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _templates:
-  - {fileID: 320753745301761346, guid: 1206d5cc2b3d89b4ea4866b07547c627, type: 3}
-  - {fileID: 9215872277779914843, guid: ed150a15d50be1d4ca5ef6368cf488dd, type: 3}
-  - {fileID: 8816961012727745023, guid: cdc8a489cad4e9749b54b0321bdb4f44, type: 3}
-  _player: {fileID: 898223949}
-  _viewRadius: 15
-  _cellSize: 1.5
 --- !u!4 &1906965401
 Transform:
   m_ObjectHideFlags: 0
